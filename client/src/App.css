@@ -45,6 +45,7 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+<<<<<<< HEAD
 .list h1{
   color: white;
   text-align: center;
@@ -89,4 +90,8 @@ body {
 }
 .cart{
   color: white;
+=======
+.Artist-List{
+border-style: groove;
+>>>>>>> 15cf15fa88b98620c6cead63f356156a5b8ea264
 }
