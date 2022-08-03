@@ -6,6 +6,11 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     render json: @user
+    if user
+      render json: @user
+    else
+      render json: {message: "User Not Found"}
+    end
   end
 
   # POST /users
