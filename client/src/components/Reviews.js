@@ -11,5 +11,5 @@ function Reviews() {
      );
   }
   
-export default Tickets;
+export default Reviews;
 

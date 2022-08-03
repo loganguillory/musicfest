@@ -1,38 +1,61 @@
+import React from 'react';
+//import {Route, Switch} from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
-import React,{ useState, useEffect } from "react";
-import React from "react";
+
 import './App.css';
-import ConcertLineUp from './Components/ConcertLineUp';
-import HomePage from './Components/HomePage';
-import ShoppingCart from './Components/ShoppingCart';
-import NavBar from './Components/NavBar'
 
-function App() {
-  const [user, setUser] = useState("");
-  const [concertData, setConcertData] = useState([]);
-  // console.log(concertData);
-  // console.log("hello");
-  useEffect(() => {
-    fetch("/concerts")
-      .then((r) => r.json())
-      .then((data) => {
-       setConcertData(data);
-      });
-  }, []);
-
-  return <div className="App"></div>;
+import NavBar from './components/NavBar';
+import ConcertLineUp from './components/ConcertLineUp';
+import HomePage from './components/HomePage';
+import Reviews from './components/Reviews';
+import ShoppingCart from './components/ShoppingCart';
+import SignUp from './components/SignUp';
 
 
 function App() {
+  
   return (
-    <div className="App">
-      <h1>hello world</h1>
-      <ConcertLineUp />
-      <HomePage />
-      <ShoppingCart />
+    <Router>
       <NavBar />
-    </div>
+      <Switch>   
+      <Route path="/ConcertLineUp">
+          <ConcertLineUp />
+        </Route>    
+        <Route path="/HomePage">
+          <HomePage />
+        </Route>
+        <Route path="/Reviews">
+          <Reviews />
+        </Route>
+        <Route path="/ShoppingCart">
+          <ShoppingCart />
+        </Route>
+        <Route path="/SignUp">
+          <SignUp />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
-}
+//   return (
+  
+//       <Switch>   
+//       <Route path="/ConcertLineUp">
+//           <ConcertLineUp />
+//         </Route>    
+//         <Route path="/HomePage">
+//           <HomePage />
+//         </Route>
+//         {/* <Route path="/ProductPage">
+//           <ProductPage />
+//         </Route> */}
+//         {/* <Route path="/">
+//           <Home />
+//         </Route> */}
+//       </Switch>
+
+//   );
+// }
+
 export default App;
