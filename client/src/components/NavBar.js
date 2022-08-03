@@ -2,7 +2,7 @@ import React from "react";
 import '../App.css'
 
 
-
+//need to add a title and dates of musicfest on navbar
 function NavBar() {
     return (
         <div className="homepage">
@@ -18,7 +18,7 @@ function NavBar() {
                         <a href="Lineup">Lineup</a>
                     </li>
                 </ul>
-                    <a className="request" href="AddRequest">Add Request for Item</a>
+                    
             </nav>
         </div>
     )

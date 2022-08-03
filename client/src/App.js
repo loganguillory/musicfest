@@ -3,6 +3,7 @@ import './App.css';
 import ConcertLineUp from './Components/ConcertLineUp';
 import HomePage from './Components/HomePage';
 import ShoppingCart from './Components/ShoppingCart';
+import NavBar from './Components/NavBar'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <ConcertLineUp />
       <HomePage />
       <ShoppingCart />
+      <NavBar />
     </div>
   );
 }
