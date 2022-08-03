@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show,  :destroy]
 
-  
+  def index
+   @users = User.all
+   render json: @users
+    
+  end
 
   # GET /users/1
   def show
@@ -15,10 +19,14 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new!(user_params)
-    session[:user_id] = user.id
+    @user = User.new(user_params)
+    # session[:user_id] = user.id
+    if @user.save
+     render json:@user
+    else
     render json: @user, status: :created
   end
+end
 
   # # PATCH/PUT /users/1
   # def update
