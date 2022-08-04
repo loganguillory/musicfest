@@ -1,51 +1,4 @@
 
-body {
-  background-image: url("https://assets3.thrillist.com/v1/image/3070504/1584x1054/crop;webp=auto;jpeg_quality=60.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.nav{
-  background-color: rgba(100, 122, 159, 0.646);
-  color: white;
-  display: flex;
-  box-sizing: border-box;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 0 1rem;
-  font-size: 2rem;
-}
-.nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-.nav a{
-  color: inherit;
-  text-decoration: none;
-}
-.homepage h1{
-  font-size: 4rem;
-  text-align: center;
-  color: white;
-}
-.homepage img{
-  width: 800px;
-  height: 450px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.card-list{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-<<<<<<< HEAD
 .list h1{
   color: white;
   text-align: center;
@@ -90,8 +43,7 @@ body {
 }
 .cart{
   color: white;
-=======
+}
 .Artist-List{
-border-style: groove;
->>>>>>> 15cf15fa88b98620c6cead63f356156a5b8ea264
+  border-style: groove;
 }

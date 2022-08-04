@@ -1,66 +1,3 @@
-import React from 'react';
-//import {Route, Switch} from "react-router-dom"
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
-
-
-<<<<<<< HEAD
-import './App.css';
-
-import NavBar from './components/NavBar';
-import ConcertLineUp from './components/ConcertLineUp';
-import HomePage from './components/HomePage';
-import Reviews from './components/Reviews';
-import ShoppingCart from './components/ShoppingCart';
-import SignUp from './components/SignUp';
-
-
-function App() {
-  
-  return (
-    <Router>
-      <NavBar />
-      <Switch>   
-      <Route path="/ConcertLineUp">
-          <ConcertLineUp />
-        </Route>    
-        <Route path="/HomePage">
-          <HomePage />
-        </Route>
-        <Route path="/Reviews">
-          <Reviews />
-        </Route>
-        <Route path="/ShoppingCart">
-          <ShoppingCart />
-        </Route>
-        <Route path="/SignUp">
-          <SignUp />
-        </Route>
-      </Switch>
-    </Router>
-  );
-}
-//   return (
-  
-//       <Switch>   
-//       <Route path="/ConcertLineUp">
-//           <ConcertLineUp />
-//         </Route>    
-//         <Route path="/HomePage">
-//           <HomePage />
-//         </Route>
-//         {/* <Route path="/ProductPage">
-//           <ProductPage />
-//         </Route> */}
-//         {/* <Route path="/">
-//           <Home />
-//         </Route> */}
-//       </Switch>
-
-//   );
-// }
-
-export default App;
-=======
 import React,{ useState, useEffect } from "react"
 import './App.css'
 import ConcertLineUp from './components/ConcertLineUp'
@@ -75,6 +12,8 @@ function App() {
   const [array, setArray] = useState([])
   const [schedule, setSchedule] = useState([])
   const [page, setPage] = useState("/")
+  const [reviewsArray, setReviewsArray] = useState([])
+  
   // console.log(array)
   // console.log("hello");
   
@@ -87,17 +26,32 @@ function App() {
       })
   }, []);
 
+  useEffect(() => {
+    fetch("/reviews")
+      .then((r) => r.json())
+      .then((data) => {
+       setReviewsArray(data);
+      })
+  }, []);
+
 
   const showList = array.map(show=>{
     return(
       <ConcertLineUp key={show} 
-      show={show}/> 
+      show={show}/>                                 
      )
   })
+
+  const reviewsList = reviewsArray.map(review =>{
+    return(
+      <Review key={review} 
+      review={review}/> 
+  )} 
+)
   function handleConcertClick(concert){
    setSchedule(concert)
-    
   }
+
   return (
     <Router>
     <div className="App">
@@ -109,7 +63,7 @@ function App() {
     <Switch>
       
       <Route path= "/reviews">
-        <Review />
+        <Review  ListofReviews ={reviewsList} />
       </Route>
    
       <Route path="/">
@@ -135,4 +89,3 @@ function App() {
 }
 
 export default App;
->>>>>>> 15cf15fa88b98620c6cead63f356156a5b8ea264

@@ -1,4 +1,6 @@
 import React from "react";
+import ConcertCard from "./ConcertCard";
+
 
 
 function ConcertLineUp({show}) {
