@@ -45,53 +45,6 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-<<<<<<< HEAD
-.list h1{
-  color: white;
-  text-align: center;
-}
-.filter{
-  position: relative;
-  padding-left: 20px;
-}
-.card{
-  width: 250px;
-  padding: 20px;
-}
-.card:hover{
-  box-shadow: 0px 10px 10px 10px rgba(208, 205, 205, 0.314);
-  cursor: pointer;
-}
-.img_box img{
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
-}
-.details {
-  color: white;
-}
-.details button {
-  padding: 5px 10px;
-  border: none;
-  font-weight: bold;
-  background-color: rgb(194, 165, 243);
-  outline: none;
-}
-.about{
-  color: white;
-  text-align: center;
-}
-.about h1{
-  font-size: 4rem;
-}
-.about p{
-  font-size: 2rem;
-}
-.cart{
-  color: white;
-=======
 .Artist-List{
 border-style: groove;
->>>>>>> 15cf15fa88b98620c6cead63f356156a5b8ea264
 }
