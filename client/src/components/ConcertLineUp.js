@@ -1,33 +1,17 @@
 import React from "react";
+import ArtistCard from "./ArtistCard";
+import Review from "./Review";
 
+function ConcertLineUp({ array, handleCLick, schedule }) {
+  const showList = array.map((show) => {
+    return <ArtistCard show={show} key={show.id} />;
+  });
 
-function ConcertLineUp({show}) {
-  console.log(show)
   return (
     <div>
-       {/* {array.map(show => {
-        
-          // console.log(show.artist_name)
-          return ( */}
-          
-            
-           <div className="Artist-List">
-            {show.artist_name} 
-              
-            </div>
-        
-
-      
-        
-             {/* <div key={show.Artist_name} id="concert line-up"> */}
-        
+      <div className="Artist-List">{showList}</div>
     </div>
-      
-  )
+  );
 }
-  
-      
 
-  
-  
-export default ConcertLineUp; 
+export default ConcertLineUp;

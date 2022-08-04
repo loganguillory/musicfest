@@ -3,7 +3,7 @@ import '../App.css'
 
 
 
-function Review({showList}) {
+function Review({}) {
     return (
         <div className="Reviews">
           <h1> helloooo </h1>
