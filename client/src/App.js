@@ -6,7 +6,8 @@ import HomePage from './components/HomePage'
 import ShoppingCart from './components/ShoppingCart'
 import NavBar from './components/NavBar'
 import Review from './components/Review'
-import ArtistCard from './components/ArtistCard'
+import ReviewCards from './components/ReviewCards';
+
 import {Switch, BrowserRouter as Router, Route, NavLink} from "react-router-dom"
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   const [array, setArray] = useState([])
   const [schedule, setSchedule] = useState({})
   const [page, setPage] = useState("/")
-  const [reviewArray, setReviewArray] = useState({})
+  const [reviewArray, setReviewArray] = useState([])
   // console.log(array)
   // console.log("hello");
   
@@ -27,27 +28,26 @@ function App() {
       })
   }, []);
 
+  console.log(array)
 
-  useEffect(()=> {
-    fetch('reviews')
-    .then(response => response.json())
-    .then((data )=>{
-      console.log(data)
 
-    })
-  })
+  // useEffect(()=> {
+  //   fetch('/reviews')
+  //   .then(response => response.json())
+  //   .then((data )=>{
+  //     setReviewArray(data.reviews)
+      
+  //   })
+  // }, []);
 
   
   
   function handleClick(concert){
   setSchedule(concert)
-  
-    
   }
-  return (
-
   
-    <Router>
+  return (
+  <Router>
     <div className="App">
       <NavBar onChangePage={setPage}/>
       
@@ -61,7 +61,7 @@ function App() {
             <span class="c-homehero_title">April 21st-23rd, 2023</span>
             <br></br>
             <span class="c-homehero_subTitle">
-              <b>See you in the flatlands</b>
+              <b>See you in the Flatlands</b>
             </span>
           </div>
           <div id="buybutton">
@@ -73,7 +73,8 @@ function App() {
         <Switch>
 
           <Route path= "/reviews">
-            <Review />
+            <Review array={array}/>
+            <ReviewCards/>
           </Route>
 
           <Route path="/lineup">

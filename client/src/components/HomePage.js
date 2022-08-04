@@ -2,7 +2,7 @@ import React from "react";
 import ArtistCardDetail from "./ArtistCardDetail";
 
 function HomePage({ array }) {
-  console.log(array);
+  
   const concertDetails = array.map((concert) => {
     return <ArtistCardDetail show={concert} key={concert.id} />;
   });
